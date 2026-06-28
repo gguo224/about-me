@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강민구 | About Me</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --border: #222222;
+      --accent: #00FF87;
+      --accent-dim: rgba(0, 255, 135, 0.08);
+      --text: #F0F0F0;
+      --muted: #666666;
+      --tag-bg: #1A1A1A;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Noto Sans KR', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 720px;
+    }
+
+    /* 프롬프트 헤더 */
+    .prompt {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .prompt .path { color: var(--accent); }
+    .prompt .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 1.1em;
+      background: var(--accent);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* 이름 */
+    .name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(2.4rem, 6vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+    .name .accent { color: var(--accent); }
+
+    .role {
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* 구분선 */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    /* 섹션 */
+    .section { margin-bottom: 2rem; }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #C8C8C8;
+      font-weight: 300;
+    }
+
+    /* 프로젝트 카드 */
+    .cards { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); }
+
+    .card-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+    .card-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* 태그 */
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 3px;
+    }
+
+    /* 푸터 */
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer span { color: var(--accent); }
+
+    @media (max-width: 480px) {
+      body { padding: 1.25rem; }
+      .name { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="prompt">
+      <span class="path">~/about-me</span>
+      <span>$</span>
+      <span>cat index.html</span>
+      <span class="cursor"></span>
+    </div>
+
+    <h1 class="name">강민구</h1>
+
+    <hr class="divider" />
+
+    <div class="section">
+      <div class="section-label">소개</div>
+      <p class="section-text">
+        경상국립대학교 컴퓨터공학과 3학년 학부 연구생입니다.<br />
+        머신러닝 연구와 AI 기반 서비스 개발을 병행하며,<br />
+        AI를 분석 도구가 아닌 협업 파트너로 활용하는 방법을 탐구하고 있습니다.
+      </p>
+    </div>
+
+    <div class="section">
+      <div class="section-label">프로젝트</div>
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-title">와인 품질 예측 모델</div>
+          <div class="card-desc">기후 데이터(WorldClim / Open-Meteo)를 활용한 XGBoost 기반 회귀 모델. SHAP으로 주요 변수 해석.</div>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">ML Research</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Index-Maker</div>
+          <div class="card-desc">인문·상경계 대학생을 위한 커리어 역량 기록 앱. STAR 구조 활동 로그 + NCS 역량 분류 + AI 기반 역량 매핑.</div>
+          <div class="tags">
+            <span class="tag">Claude API</span>
+            <span class="tag">OpenAI API</span>
+            <span class="tag">AI Mapping</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">관심사</div>
+      <div class="tags" style="margin-top:0">
+        <span class="tag">AI Agent</span>
+        <span class="tag">B2C 서비스</span>
+        <span class="tag">XAI</span>
+        <span class="tag">Startup</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span>gguo224</span>
+      <span>GNU · Computer Engineering · 2022</span>
+    </div>
+
+  </div>
+</body>
+</html>
